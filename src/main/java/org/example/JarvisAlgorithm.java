@@ -6,14 +6,27 @@ import java.util.List;
 
 public class JarvisAlgorithm {
 
+    private long time;
+    private int iterations;
+
     // Определение направления поворота
     private boolean orientation(Point a, Point b, Point c) {
         int val = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
         return val > 0;
     }
 
+    public long getTime() {
+        return time;
+    }
+
+    public int getIterations() {
+        return iterations;
+    }
+
     // Реализация алгоритма Джарвиса
     public List<Point> convexHullAlgorithm(List<Point> points) {
+        time = System.nanoTime();
+
         List<Point> convexHullPoints = new ArrayList<>();
 
         if(points.size() < 3){
@@ -30,6 +43,7 @@ public class JarvisAlgorithm {
             } else if(p1.y == p2.y && p1.x < p2.x){
                 start = i;
             }
+            iterations++;
         }
 
         int p = start;
@@ -43,10 +57,13 @@ public class JarvisAlgorithm {
                 if(orientation(points.get(p), points.get(q), points.get(i))){
                     q = i;
                 }
+                iterations++;
             }
             p = q;
 
         } while (p != start);
+
+        time = (System.nanoTime() - time) / 1000000;
 
         return convexHullPoints;
     }
