@@ -59,6 +59,9 @@ public class VisualizeHull extends JPanel {
                 e.printStackTrace();
             }
         }
+
+
+        frame.dispose();
     }
 
     private static List<Point> generatePoints(int count){

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class JarvisAlgorithm {
 
-    private long time;
-    private int iterations;
+    private long time = 0;
+    private int iterations = 0;
 
     // Определение направления поворота
     private boolean orientation(Point a, Point b, Point c) {
@@ -43,7 +43,7 @@ public class JarvisAlgorithm {
             } else if(p1.y == p2.y && p1.x < p2.x){
                 start = i;
             }
-            iterations++;
+            //iterations++;
         }
 
         int p = start;
@@ -63,7 +63,7 @@ public class JarvisAlgorithm {
 
         } while (p != start);
 
-        time = (System.nanoTime() - time) / 1000000;
+        time = System.nanoTime() - time;
 
         return convexHullPoints;
     }
