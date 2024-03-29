@@ -29,15 +29,4 @@ public class Main {
 
         }
     }
-
-    private static java.util.List<Point> generateRandomPoints(int numPoints, int maxX, int maxY) {
-        java.util.List<Point> points = new ArrayList<>();
-        Random random = new Random();
-        for (int i = 0; i < numPoints; i++) {
-            int x = random.nextInt(30, maxX);
-            int y = random.nextInt(30, maxY);
-            points.add(new Point(x, y));
-        }
-        return points;
-    }
 }
