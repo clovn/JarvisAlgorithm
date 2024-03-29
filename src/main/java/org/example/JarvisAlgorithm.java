@@ -43,7 +43,7 @@ public class JarvisAlgorithm {
             } else if(p1.y == p2.y && p1.x < p2.x){
                 start = i;
             }
-            //iterations++;
+            iterations++;
         }
 
         int p = start;
