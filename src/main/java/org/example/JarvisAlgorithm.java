@@ -34,13 +34,13 @@ public class JarvisAlgorithm {
         }
 
         int start = 0;
-        //Находим нижнюю левую точку
+        //Находим нижнюю правую точку
         for(int i = 1; i < points.size(); i++){
             Point p1 = points.get(i);
             Point p2 = points.get(start);
             if(p1.y > p2.y){
                start = i;
-            } else if(p1.y == p2.y && p1.x < p2.x){
+            } else if(p1.y == p2.y && p1.x > p2.x){
                 start = i;
             }
             iterations++;
